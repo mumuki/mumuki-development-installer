@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
-
+echo ''
 echo '[MumukiDevelopmentInstaller] Clonning mumuki-development-installer repository....'
 git clone https://github.com/mumuki/mumuki-development-installer mumuki
 cd mumuki
 
 ## Create the Vagrant VM
 
+echo ''
 echo '[MumukiDevelopmentInstaller] Creating Vagrant VM....'
 vagrant up
 
 ## Provision the VM using escualo
 
+echo ''
 echo '[MumukiDevelopmentInstaller] Provisioning the Vagrant VM....'
 gem install escualo
 escualo script development.platform.yml --hostname 127.0.0.1 \
@@ -24,6 +26,7 @@ escualo script development.platform.yml --hostname 127.0.0.1 \
 mkdir runners
 mkdir gems
 
+echo ''
 echo '[MumukiDevelopmentInstaller] Cloning Components....'
 for component in  atheneum \
                   desktop \
@@ -32,6 +35,7 @@ for component in  atheneum \
   git clone https://github.com/mumuki/mumuki-$component $component
 done
 
+echo ''
 echo '[MumukiDevelopmentInstaller] Cloning Runners....'
 for runner in haskell \
               prolog \
@@ -49,6 +53,7 @@ for runner in haskell \
   git clone https://github.com/mumuki/mumuki-$runner-runner runners/$runner
 done
 
+echo ''
 echo '[MumukiDevelopmentInstaller] Cloning Gems....'
 git clone https://github.com/mumuki/mumukit gems/mumukit
 for gem in bridge \
