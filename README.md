@@ -29,6 +29,7 @@ curl https://raw.githubusercontent.com/mumuki/mumuki-development-installer/maste
 # Use
 
 ```
+$ cd mumuki
 $ vagrant ssh
 $ cd vagrant
 $ ls
