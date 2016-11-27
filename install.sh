@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-git clone https://github.com/mumuki/development mumuki
+git clone https://github.com/mumuki-development-installer/development mumuki
 cd mumuki
 vagrant up
 gem install escualo
