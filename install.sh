@@ -13,7 +13,7 @@ for component in  atheneum \
                   desktop \
                   classroom-api \
                   bibliotheca;  do
-  git clone https://github.com/mumuki-$component $component
+  git clone https://github.com/mumuki/mumuki-$component $component
 done
 
 for runner in haskell \
@@ -29,10 +29,10 @@ for runner in haskell \
               python \
               elixir \
               qsim ; do
-  git clone https://github.com/mumuki-$runner-runner runners/$runner
+  git clone https://github.com/mumuki/mumuki-$runner-runner runners/$runner
 done
 
-git clone https://github.com/mumukit gems/mumukit
+git clone https://github.com/mumuki/mumukit gems/mumukit
 
 for gem in bridge \
            auth \
@@ -42,5 +42,5 @@ for gem in bridge \
            directives \
            serice \
            content-type ; do
-  git clone https://github.com/mumukit-$gem gems/$gem
+  git clone https://github.com/mumuki/mumukit-$gem gems/$gem
 done
