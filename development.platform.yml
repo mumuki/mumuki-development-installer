@@ -2,7 +2,7 @@
 # ready to develop. For security reasons, run this script in
 # a vm, or execute steps manually
 local:
- - bootstrap --no-monit --with-rbenv --verbose
+ - bootstrap --no-monit --with-rbenv --verbose  --monit-password foo
 remote:
  - env set RAILS_ENV=development
            PGDATABASE=atheneum
