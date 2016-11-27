@@ -53,7 +53,7 @@ for gem in bridge \
            nuntius \
            core \
            directives \
-           serice \
+           service \
            content-type ; do
   git clone https://github.com/mumuki/mumukit-$gem gems/$gem
 done
