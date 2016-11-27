@@ -57,3 +57,12 @@ for gem in bridge \
            content-type ; do
   git clone https://github.com/mumuki/mumukit-$gem gems/$gem
 done
+
+echo ''
+echo 'Awesome! Mumuki Platfom development environement installation is complete. Now:'
+echo ''
+echo '$ cd mumuki'
+echo '$ vagrant ssh'
+echo '$ cd vagrant'
+echo ''
+echo 'Happy mumuki coding!'
