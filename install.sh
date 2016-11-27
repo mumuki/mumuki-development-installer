@@ -13,7 +13,11 @@ vagrant up
 
 echo '[MumukiDevelopmentInstaller] Provisioning the Vagrant VM....'
 gem install escualo
-escualo script development.platform.yml --hostname 127.0.0.1 --username root --ssh-port 2222
+escualo script development.platform.yml --hostname 127.0.0.1 \
+                                        --username root \
+                                        --ssh-port 2222 \
+                                        --verbose \
+                                        --trace
 
 ## Clone all main mumuki repositories
 

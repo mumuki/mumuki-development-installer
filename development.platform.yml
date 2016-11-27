@@ -2,13 +2,13 @@
 # ready to develop. For security reasons, run this script in
 # a vm, or execute steps manually
 local:
- - bootstrap --no-monit --with-rbenv
+ - bootstrap --no-monit --with-rbenv --verbose
 remote:
  - env set RAILS_ENV=development
            PGDATABASE=atheneum
            POSTGRESQL_DB_USERNAME=mumuki
            POSTGRESQL_DB_PASSWORD=mumuki
            POSTGRESQL_DB_HOST=localhost
- - plugin install postgre
- - plugin install rabbit --rabbit_admin_password=admin
- - plugin install mongo
+ - plugin install postgre --verbose
+ - plugin install rabbit --rabbit_admin_password=admin --verbose
+ - plugin install mongo --verbose
