@@ -2,13 +2,20 @@
 
 git clone https://github.com/mumuki/mumuki-development-installer mumuki
 cd mumuki
+
+## Create the Vagrant VM
+
 vagrant up
+
+## Provision the VM using escualo
+
 gem install escualo
 escualo script development.platform.yml --hostname 127.0.0.1 --username root --ssh-port 2222
 
+## Clone all main mumuki repositories
+
 mkdir runners
 mkdir gems
-
 for component in  atheneum \
                   desktop \
                   classroom-api \
