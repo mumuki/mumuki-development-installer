@@ -12,7 +12,12 @@ Vagrant.configure(2) do |config|
     vb.memory = '2048'
   end
 
+  ssh_private_key_path = File.join Dir.home, '.ssh', 'id_rsa'
   ssh_public_key = File.readlines(File.join Dir.home, '.ssh', 'id_rsa.pub').first.strip
+
+  config.ssh.username = 'root'
+  config.ssh.private_key_path = ssh_private_key_path
+  
   config.vm.provision 'shell', inline: <<-SHELL
     echo #{ssh_public_key} >> /root/.ssh/authorized_keys
   SHELL
