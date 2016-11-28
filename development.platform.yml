@@ -1,5 +1,5 @@
 local:
- - bootstrap --no-monit --with-rbenv --environment=development --verbose
+ - bootstrap --no-monit --with-rbenv --env=development --verbose
 remote:
  - env set PGDATABASE=atheneum
            POSTGRESQL_DB_USERNAME=mumuki
