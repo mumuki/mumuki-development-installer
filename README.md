@@ -31,7 +31,7 @@ curl https://raw.githubusercontent.com/mumuki/mumuki-development-installer/maste
 ```
 $ cd mumuki
 $ vagrant ssh
-$ cd vagrant
+$ cd /vagrant
 $ ls
 ```
 
