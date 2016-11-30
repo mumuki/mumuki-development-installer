@@ -72,6 +72,6 @@ echo 'Awesome! Mumuki Platfom development environement installation is complete.
 echo ''
 echo '$ cd mumuki'
 echo '$ vagrant ssh'
-echo '$ cd vagrant'
+echo '$ cd /vagrant'
 echo ''
 echo 'Happy mumuki coding!'
