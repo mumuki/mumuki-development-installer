@@ -1,6 +1,40 @@
 #!/usr/bin/env bash
+
+## Validate prerequisite
+
+function validateCommand {
+    $@ &>/dev/null
+    local status="$?"
+    if [ $status -ne 0 ]; then
+        echo "Please, check the $@'s installation." >&2
+	exit
+    fi
+}
+
+### Validate Git
 echo ''
-echo '[MumukiDevelopmentInstaller] Clonning mumuki-development-installer repository....'
+echo '[MumukiDevelopmentInstaller] Checking Git installation'
+validateCommand 'git --version'
+
+### Validate Vagrant
+echo ''
+echo '[MumukiDevelopmentInstaller] Checking Vagrant installation'
+validateCommand 'vagrant -v'
+
+### Validate VirtualBox
+echo ''
+echo '[MumukiDevelopmentInstaller] Checking VirtualBox installation'
+validateCommand 'vboxmanage -v'
+
+### Validate Ruby
+echo ''
+echo '[MumukiDevelopmentInstaller] Checking Ruby installation'
+validateCommand 'ruby -v'
+
+## Cloning repository
+
+echo ''
+echo '[MumukiDevelopmentInstaller] Cloning mumuki-development-installer repository....'
 git clone https://github.com/mumuki/mumuki-development-installer mumuki
 cd mumuki
 
@@ -68,7 +102,7 @@ for gem in bridge \
 done
 
 echo ''
-echo 'Awesome! Mumuki Platfom development environement installation is complete. Now:'
+echo 'Awesome! Mumuki Platform development environment installation is complete. Now:'
 echo ''
 echo '$ cd mumuki'
 echo '$ vagrant ssh'
