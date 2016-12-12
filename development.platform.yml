@@ -6,6 +6,7 @@ remote:
            POSTGRESQL_DB_PASSWORD=mumuki
            POSTGRESQL_DB_HOST=localhost
  - plugin install postgre --verbose
+ - plugin install docker --verbose
  - plugin install rabbit --rabbit-admin-password admin --verbose
  - plugin install mongo --verbose
  
