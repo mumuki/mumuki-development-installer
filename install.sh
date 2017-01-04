@@ -62,10 +62,12 @@ mkdir gems
 
 echo ''
 echo '[MumukiDevelopmentInstaller] Cloning Components....'
-for component in  atheneum \
-                  desktop \
+for component in  laboratory \
+                  classroom \
                   classroom-api \
-                  bibliotheca;  do
+                  bibliotheca \
+		  bibliotheca-api \
+		  office;  do
   git clone https://github.com/mumuki/mumuki-$component $component
 done
 
@@ -74,6 +76,7 @@ echo '[MumukiDevelopmentInstaller] Cloning Runners....'
 for runner in haskell \
               prolog \
               gobstones \
+	      xgobstones \
               javascript \
               c \
               cpp \
