@@ -48,7 +48,7 @@ vagrant up
 
 echo ''
 echo '[MumukiDevelopmentInstaller] Provisioning the Vagrant VM....'
-gem install escualo -v 0.5.1
+gem install escualo -v 0.5.2
 escualo script development.platform.yml --hostname 127.0.0.1 \
                                         --username root \
                                         --ssh-port 2222 \
