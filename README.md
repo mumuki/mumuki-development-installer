@@ -15,7 +15,6 @@ After running it, you are ready to start coding mumuki!
 
 * Git
 * Curl
-* Ruby 2+. No special installation is required - `apt-get install ruby` is enough
 * [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 # Install

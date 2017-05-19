@@ -21,8 +21,30 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision 'shell', inline: <<-SHELL
+    set -e
+
+    echo '[MumukiDevinstaller] Copying authorized keys....'
     echo #{ssh_public_key} >> /root/.ssh/authorized_keys
 
+    echo '[MumukiDevinstaller] Creating /data/db....'
     mkdir -p /data/db
+
+    echo '[MumukiDevinstaller] Installing Ruby....'
+    apt-get purge libruby* -y
+    apt-add-repository 'deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main'
+    apt-get update
+    apt-get install -y --force-yes ruby2.3 ruby2.3-dev
+
+    echo '[MumukiDevinstaller] Installing Escualo....'
+    gem install escualo -v 3.1.1
+
+    echo '[MumukiDevinstaller] Running Escualo....'
+    export OPTIONS='--verbose --trace'
+    escualo bootstrap --with-native-ruby $OPTIONS
+    escualo plugin install postgres --pg-username mumuki --pg-password mumuki $OPTIONS
+    escualo plugin install docker $OPTIONS
+    escualo plugin install rabbit --rabbit-admin-password mumuki $OPTIONS
+    escualo plugin install mongo $OPTIONS
+
   SHELL
 end
