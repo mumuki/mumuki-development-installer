@@ -61,7 +61,7 @@ echo '[MumukiDevinstaller] Provisioning the Vagrant VM....'
 
 export OPTIONS='--hostname 127.0.0.1 --username root --ssh-port 2222 --verbose'
 escualo bootstrap --with-rbenv $OPTIONS
-escualo plugin install postgres $OPTIONS
+escualo plugin install postgres --pg-username mumuki --pg-password mumuki $OPTIONS
 escualo plugin install docker $OPTIONS
 escualo plugin install rabbit $OPTIONS
 escualo plugin install mongo $OPTIONS
