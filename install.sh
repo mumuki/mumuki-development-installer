@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 set -e
 
+echo ''
+echo '   _____                       __   .__________              .__                 __         .__  .__                '
+echo '  /     \  __ __  _____  __ __|  | _|__\______ \   _______  _|__| ____   _______/  |______  |  | |  |   ___________ '
+echo ' /  \ /  \|  |  \/     \|  |  \  |/ /  ||    |  \_/ __ \  \/ /  |/    \ /  ___/\   __\__  \ |  | |  | _/ __ \_  __ \'
+echo '/    Y    \  |  /  Y Y  \  |  /    <|  ||    `   \  ___/\   /|  |   |  \\___ \  |  |  / __ \|  |_|  |_\  ___/|  | \/'
+echo '\____|__  /____/|__|_|  /____/|__|_ \__/_______  /\___  >\_/ |__|___|  /____  > |__| (____  /____/____/\___  >__|   '
+echo '        \/            \/           \/          \/     \/             \/     \/            \/               \/       '
+echo ''
+
 ## Validate prerequisite
 
 function validateCommand {
@@ -14,47 +23,48 @@ function validateCommand {
 
 ### Validate Git
 echo ''
-echo '[MumukiDevelopmentInstaller] Checking Git installation'
+echo '[MumukiDevinstaller] Checking Git installation'
 validateCommand 'git --version'
 
 ### Validate Vagrant
 echo ''
-echo '[MumukiDevelopmentInstaller] Checking Vagrant installation'
+echo '[MumukiDevinstaller] Checking Vagrant installation'
 validateCommand 'vagrant -v'
 
 ### Validate VirtualBox
 echo ''
-echo '[MumukiDevelopmentInstaller] Checking VirtualBox installation'
+echo '[MumukiDevinstaller] Checking VirtualBox installation'
 validateCommand 'vboxmanage -v'
 
 ### Validate Ruby
 echo ''
-echo '[MumukiDevelopmentInstaller] Checking Ruby installation'
+echo '[MumukiDevinstaller] Checking Ruby installation'
 validateCommand 'ruby -v'
 
 ## Cloning repository
 
 echo ''
-echo '[MumukiDevelopmentInstaller] Cloning mumuki-development-installer repository....'
+echo '[MumukiDevinstaller] Cloning mumuki-development-installer repository....'
 git clone https://github.com/mumuki/mumuki-development-installer mumuki
 cd mumuki
 
 ## Create the Vagrant VM
 
 echo ''
-echo '[MumukiDevelopmentInstaller] Creating Vagrant VM....'
+echo '[MumukiDevinstaller] Creating Vagrant VM....'
 vagrant up
 
 ## Provision the VM using escualo
 
 echo ''
-echo '[MumukiDevelopmentInstaller] Provisioning the Vagrant VM....'
-gem install escualo -v 0.5.2
-escualo script development.platform.yml --hostname 127.0.0.1 \
-                                        --username root \
-                                        --ssh-port 2222 \
-                                        --verbose \
-                                        --trace
+echo '[MumukiDevinstaller] Provisioning the Vagrant VM....'
+
+export OPTIONS='--hostname 127.0.0.1 --username root --ssh-port 2222'
+escualo bootstrap --with-rbenv $OPTIONS
+escualo plugin install postgres $OPTIONS
+escualo plugin install docker $OPTIONS
+escualo plugin install rabbit $OPTIONS
+escualo plugin install mongo $OPTIONS
 
 ## Clone all main mumuki repositories
 
@@ -62,7 +72,7 @@ mkdir runners
 mkdir gems
 
 echo ''
-echo '[MumukiDevelopmentInstaller] Cloning Components....'
+echo '[MumukiDevinstaller] Cloning Components....'
 for component in  laboratory \
                   classroom \
                   classroom-api \
@@ -73,7 +83,7 @@ for component in  laboratory \
 done
 
 echo ''
-echo '[MumukiDevelopmentInstaller] Cloning Runners....'
+echo '[MumukiDevinstaller] Cloning Runners....'
 for runner in haskell \
               prolog \
               gobstones \
@@ -92,7 +102,7 @@ for runner in haskell \
 done
 
 echo ''
-echo '[MumukiDevelopmentInstaller] Cloning Gems....'
+echo '[MumukiDevinstaller] Cloning Gems....'
 git clone https://github.com/mumuki/mumukit gems/mumukit
 for gem in bridge \
            auth \
