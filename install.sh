@@ -45,7 +45,7 @@ validateCommand 'ruby -v'
 
 echo ''
 echo '[MumukiDevinstaller] Cloning mumuki-development-installer repository....'
-git clone https://github.com/mumuki/mumuki-development-installer mumuki
+git clone git@github.com:mumuki/mumuki-development-installer.git mumuki
 cd mumuki
 
 ## Create the Vagrant VM
@@ -67,7 +67,7 @@ for component in  laboratory \
                   bibliotheca \
 		  bibliotheca-api \
 		  office;  do
-  git clone https://github.com/mumuki/mumuki-$component $component
+  git clone git@github.com:mumuki/mumuki-$component.git $component
 done
 
 echo ''
@@ -86,12 +86,12 @@ for runner in haskell \
               python \
               elixir \
               qsim ; do
-  git clone https://github.com/mumuki/mumuki-$runner-runner runners/$runner
+  git clone git@github.com:mumuki/mumuki-$runner-runner.git runners/$runner
 done
 
 echo ''
 echo '[MumukiDevinstaller] Cloning Gems....'
-git clone https://github.com/mumuki/mumukit gems/mumukit
+git clone git@github.com:mumuki/mumukit.git gems/mumukit
 for gem in bridge \
            auth \
            inspection \
@@ -100,7 +100,7 @@ for gem in bridge \
            directives \
            service \
            content-type ; do
-  git clone https://github.com/mumuki/mumukit-$gem gems/$gem
+  git clone git@github.com:mumuki/mumukit-$gem.git gems/$gem
 done
 
 echo ''
