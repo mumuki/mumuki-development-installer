@@ -40,7 +40,7 @@ Vagrant.configure(2) do |config|
 
     echo '[MumukiDevinstaller] Running Escualo....'
     export OPTIONS='--verbose --trace'
-    escualo bootstrap --with-native-ruby $OPTIONS
+    escualo bootstrap --env development --with-native-ruby $OPTIONS
     escualo plugin install postgres --pg-username mumuki --pg-password mumuki $OPTIONS
     escualo plugin install docker $OPTIONS
     escualo plugin install rabbit --rabbit-admin-password mumuki $OPTIONS
