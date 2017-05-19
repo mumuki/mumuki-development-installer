@@ -23,7 +23,7 @@ After running it, you are ready to start coding mumuki!
 Just do
 
 ```
-curl https://raw.githubusercontent.com/mumuki/mumuki-development-installer/master/install.sh | bash
+curl https://raw.githubusercontent.com/mumuki/mumuki-devinstaller/master/install.sh | bash
 ```
 
 # Use
