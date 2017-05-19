@@ -19,8 +19,10 @@ Vagrant.configure(2) do |config|
     config.ssh.username = 'root'
     config.ssh.private_key_path = ssh_private_key_path
   end
-  
+
   config.vm.provision 'shell', inline: <<-SHELL
     echo #{ssh_public_key} >> /root/.ssh/authorized_keys
+
+    mkdir -p /data/db
   SHELL
 end
