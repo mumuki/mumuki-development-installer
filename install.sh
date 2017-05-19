@@ -59,7 +59,7 @@ vagrant up
 echo ''
 echo '[MumukiDevinstaller] Provisioning the Vagrant VM....'
 
-export OPTIONS='--hostname 127.0.0.1 --username root --ssh-port 2222'
+export OPTIONS='--hostname 127.0.0.1 --username root --ssh-port 2222 --verbose'
 escualo bootstrap --with-rbenv $OPTIONS
 escualo plugin install postgres $OPTIONS
 escualo plugin install docker $OPTIONS
