@@ -42,6 +42,7 @@ Vagrant.configure(2) do |config|
     escualo plugin install docker $OPTIONS
     escualo plugin install rabbit --rabbit-admin-password mumuki $OPTIONS
     escualo plugin install mongo $OPTIONS
+    escualo plugin install node $OPTIONS
 
   SHELL
 end
