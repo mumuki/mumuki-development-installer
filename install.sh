@@ -16,8 +16,8 @@ function validateCommand {
     $@ &>/dev/null
     local status="$?"
     if [ $status -ne 0 ]; then
-        echo "Please, check the $@'s installation." >&2
-	exit
+      echo "Please, check the $@'s installation." >&2
+      exit
     fi
 }
 
@@ -65,8 +65,8 @@ for component in  laboratory \
                   classroom \
                   classroom-api \
                   bibliotheca \
-		  bibliotheca-api \
-		  office;  do
+                  bibliotheca-api \
+                  office;  do
   git clone git@github.com:mumuki/mumuki-$component.git $component
 done
 
@@ -75,7 +75,7 @@ echo '[MumukiDevinstaller] Cloning Runners....'
 for runner in haskell \
               prolog \
               gobstones \
-	      xgobstones \
+              xgobstones \
               javascript \
               c \
               cpp \
