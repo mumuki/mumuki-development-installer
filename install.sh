@@ -99,6 +99,8 @@ for gem in bridge \
            core \
            directives \
            service \
+           platform \
+           login \
            content-type ; do
   git clone git@github.com:mumuki/mumukit-$gem.git gems/$gem
 done
