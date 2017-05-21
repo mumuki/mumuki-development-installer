@@ -26,9 +26,6 @@ Vagrant.configure(2) do |config|
     echo '[MumukiDevinstaller] Copying authorized keys....'
     echo #{ssh_public_key} >> /root/.ssh/authorized_keys
 
-    echo '[MumukiDevinstaller] Creating /data/db....'
-    mkdir -p /data/db
-
     echo '[MumukiDevinstaller] Installing Ruby....'
     apt-get purge libruby* -y
     apt-add-repository 'deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main'
@@ -36,7 +33,7 @@ Vagrant.configure(2) do |config|
     apt-get install -y --force-yes ruby2.3 ruby2.3-dev
 
     echo '[MumukiDevinstaller] Installing Escualo....'
-    gem install escualo -v 3.1.1
+    gem install escualo -v 3.1.3
 
     echo '[MumukiDevinstaller] Running Escualo....'
     export OPTIONS='--verbose --trace'
