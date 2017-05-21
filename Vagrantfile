@@ -33,7 +33,7 @@ Vagrant.configure(2) do |config|
     apt-get install -y --force-yes ruby2.3 ruby2.3-dev
 
     echo '[MumukiDevinstaller] Installing Escualo....'
-    gem install escualo -v 3.1.3
+    gem install escualo -v 3.1.4
 
     echo '[MumukiDevinstaller] Running Escualo....'
     export OPTIONS='--verbose --trace'
@@ -43,6 +43,5 @@ Vagrant.configure(2) do |config|
     escualo plugin install rabbit --rabbit-admin-password mumuki $OPTIONS
     escualo plugin install mongo $OPTIONS
     escualo plugin install node $OPTIONS
-
   SHELL
 end
