@@ -44,8 +44,8 @@ validateCommand 'ruby -v'
 ## Cloning repository
 
 echo ''
-echo '[MumukiDevinstaller] Cloning mumuki-development-installer repository....'
-git clone git@github.com:mumuki/mumuki-development-installer.git mumuki
+echo '[MumukiDevinstaller] Cloning mumuki-devinstaller repository....'
+git clone git@github.com:mumuki/mumuki-devinstaller.git mumuki
 cd mumuki
 
 ## Create the Vagrant VM
