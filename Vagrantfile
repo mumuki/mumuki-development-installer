@@ -45,5 +45,8 @@ Vagrant.configure(2) do |config|
     escualo plugin install rabbit --rabbit-admin-password mumuki $OPTIONS
     escualo plugin install mongo $OPTIONS
     escualo plugin install node $OPTIONS
+
+    echo '[MumukiDevinstaller] Configuring .bashrc....'
+    echo 'cd /vagrant' >> /root/.bashrc
   SHELL
 end
