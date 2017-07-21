@@ -55,9 +55,10 @@ echo '[MumukiDevinstaller] Creating Vagrant VM....'
 vagrant up --provision
 
 ## Clone all main mumuki repositories
+mkdir repos
+cd repos
 
-mkdir runners
-mkdir gems
+mkdir runners gems
 
 echo ''
 echo '[MumukiDevinstaller] Cloning Components....'

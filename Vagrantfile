@@ -20,6 +20,8 @@ Vagrant.configure(2) do |config|
     config.ssh.private_key_path = ssh_private_key_path
   end
 
+  config.vm.synced_folder "repos", "/vagrant"
+
   config.vm.provision 'shell', inline: <<-SHELL
     set -e
 
