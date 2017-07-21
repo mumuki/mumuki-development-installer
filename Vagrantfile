@@ -20,6 +20,8 @@ Vagrant.configure(2) do |config|
     config.ssh.private_key_path = ssh_private_key_path
   end
 
+  config.vm.synced_folder "repos", "/vagrant"
+
   config.vm.provision 'shell', inline: <<-SHELL
     set -e
 
@@ -43,5 +45,8 @@ Vagrant.configure(2) do |config|
     escualo plugin install rabbit --rabbit-admin-password mumuki $OPTIONS
     escualo plugin install mongo $OPTIONS
     escualo plugin install node $OPTIONS
+
+    echo '[MumukiDevinstaller] Configuring .bashrc....'
+    echo 'cd /vagrant' >> /root/.bashrc
   SHELL
 end
