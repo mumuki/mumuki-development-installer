@@ -1,4 +1,5 @@
 MUMUKI_PORTS = (3000..3010).to_a - [3001] # Excluding classroom, see mumuki/mumuki-classroom#125
+DB_PORTS = [5432, 27017]
 
 Vagrant.configure(2) do |config|
   config.vm.box = 'ubuntu/trusty64'
@@ -6,7 +7,7 @@ Vagrant.configure(2) do |config|
   config.vm.box_check_update = false
   # (`vagrant box outdated` to update)
 
-  MUMUKI_PORTS.each do |it|
+  (MUMUKI_PORTS + DB_PORTS).each do |it|
     config.vm.network 'forwarded_port', guest: it, host: it
   end
 
