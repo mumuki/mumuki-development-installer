@@ -48,6 +48,9 @@ echo '[MumukiDevinstaller] Cloning mumuki-devinstaller repository....'
 git clone git@github.com:mumuki/mumuki-devinstaller.git mumuki
 cd mumuki
 
+## Create the repos folder
+mkdir repos
+
 ## Create the Vagrant VM
 
 echo ''
@@ -55,7 +58,6 @@ echo '[MumukiDevinstaller] Creating Vagrant VM....'
 vagrant up --provision
 
 ## Clone all main mumuki repositories
-mkdir repos
 cd repos
 
 mkdir runners gems
