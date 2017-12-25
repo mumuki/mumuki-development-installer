@@ -1,6 +1,8 @@
 # mumuki-devinstaller
 > Installer for the Mumuki Platform development environment
 
+:warning: This repository is deprecated. Please install mumuki projects following each repo's instructions :warning:
+
 This installer installs a complete development environment in a Vagrant Machine with batteries included:
 
 * Rbenv installation
